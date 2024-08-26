@@ -8,6 +8,7 @@ import SignIn from '../signIn'
 import MyOrders from '../myOrders'
 import Navbar from '../../Components/layout/Navbar'
 import Layout from '../../Components/layout/Layout'
+import {ShopiProvider} from '../../Components/context'
 
 
 
@@ -29,12 +30,14 @@ const AppRoutes = () => {
 
 
 export default function App() {
-    return (
+  return (
+    <ShopiProvider>
       <BrowserRouter>
         <Layout>
-          <Navbar/>
+          <Navbar />
         </Layout>
         <AppRoutes />
       </BrowserRouter>
-    )
-  }
+    </ShopiProvider>
+  );
+}
